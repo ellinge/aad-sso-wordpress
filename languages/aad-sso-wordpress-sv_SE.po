@@ -2,15 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Single Sign-on with Microsoft Entra ID\n"
-"POT-Creation-Date: 2025-05-05 14:14+0200\n"
-"PO-Revision-Date: 2025-05-05 14:15+0200\n"
+"POT-Creation-Date: 2026-05-09 12:46+0200\n"
+"PO-Revision-Date: 2026-05-09 12:50+0200\n"
 "Last-Translator: Magnus Ellinge <magnus.ellinge@gmail.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: aad-sso-wordpress.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -106,54 +106,58 @@ msgid "Enable full logout"
 msgstr "Aktivera full utloggning"
 
 #: SettingsPage.php:262
+msgid "Login prompt behavior"
+msgstr "Inloggningsbeteende"
+
+#: SettingsPage.php:270
 msgid "Field to match to UPN"
 msgstr "Fält för UPN-matchning"
 
-#: SettingsPage.php:270
+#: SettingsPage.php:278
 msgid "Match on alias of the UPN"
 msgstr "Matcha på alias av UPN"
 
-#: SettingsPage.php:278
+#: SettingsPage.php:286
 msgid "Enable auto-provisioning"
 msgstr "Aktivera automatisk tilldelning"
 
-#: SettingsPage.php:286
+#: SettingsPage.php:294
 msgid "Enable auto-forward to Microsoft Entra ID"
 msgstr "Aktivera automatisk vidarebefordran till Microsoft Entra ID"
 
-#: SettingsPage.php:294
+#: SettingsPage.php:302
 msgid "Enable Microsoft Entra ID group to WordPress role association"
 msgstr "Aktivera Microsoft Entra ID-grupp till WordPress-rollassociation"
 
-#: SettingsPage.php:302
+#: SettingsPage.php:310
 msgid "Default WordPress role if not in Microsoft Entra ID group"
 msgstr "Standard WordPress-roll om inte i Microsoft Entra ID-grupp"
 
-#: SettingsPage.php:310
+#: SettingsPage.php:318
 msgid "WordPress role to Microsoft Entra ID group map"
 msgstr "Mappning av WordPress-roll till Microsoft Entra ID-grupp"
 
-#: SettingsPage.php:318
+#: SettingsPage.php:326
 msgid "OpenID Connect configuration endpoint"
 msgstr "OpenID Connect-konfigurationsslutpunkt"
 
-#: SettingsPage.php:435
+#: SettingsPage.php:451
 msgid "Map WordPress roles to Microsoft Entra ID groups."
 msgstr "Mappa WordPress-roller till Microsoft Entra ID-grupper."
 
-#: SettingsPage.php:440
+#: SettingsPage.php:456
 msgid "WordPress Role"
 msgstr "WordPress-roll"
 
-#: SettingsPage.php:441
+#: SettingsPage.php:457
 msgid "Microsoft Entra ID Group Object ID"
 msgstr "Microsoft Entra ID gruppobjekt-ID"
 
-#: SettingsPage.php:470
+#: SettingsPage.php:486
 msgid "Display Name will be shown on the WordPress login screen."
 msgstr "Visningsnamn som visas på WordPress-inloggningsskärmen."
 
-#: SettingsPage.php:481
+#: SettingsPage.php:497
 msgid ""
 "Provides a hint to Microsoft Entra ID about the domain or tenant they will "
 "be logging in to. If the domain is federated, the user will be automatically "
@@ -163,24 +167,24 @@ msgstr ""
 "kommer att logga in på. Om domänen är federerad, kommer användaren "
 "automatiskt att omdirigeras till federationsslutpunkt."
 
-#: SettingsPage.php:494
+#: SettingsPage.php:510
 msgid ""
 "The client ID of the Microsoft Entra ID application representing this blog."
 msgstr ""
 "Klient-ID för Microsoft Entra ID-applikationen som representerar denna blogg."
 
-#: SettingsPage.php:505
+#: SettingsPage.php:521
 msgid ""
 "A secret key for the Microsoft Entra ID application representing this blog."
 msgstr ""
 "En hemlig nyckel för Microsoft Entra ID-applikationen som representerar "
 "denna blogg."
 
-#: SettingsPage.php:518 SettingsPage.php:535 SettingsPage.php:649
+#: SettingsPage.php:534 SettingsPage.php:551 SettingsPage.php:687
 msgid "Set default"
 msgstr "Återställ till standard"
 
-#: SettingsPage.php:519
+#: SettingsPage.php:535
 msgid ""
 "The URL where the user is redirected to after authenticating with Microsoft "
 "Entra ID. This URL must be registered in Microsoft Entra ID as a valid "
@@ -194,7 +198,7 @@ msgstr ""
 "filtret. Om du inte vet vad du ska ange, lämna standardvärdet (vilket är "
 "denna bloggs inloggningssida)."
 
-#: SettingsPage.php:536
+#: SettingsPage.php:552
 msgid ""
 "The URL where the user is redirected to after signing out of Microsoft Entra "
 "ID. This URL must be registered in Microsoft Entra ID as a valid redirect "
@@ -206,15 +210,27 @@ msgstr ""
 "URL. (Detta påverkar inte utloggning från bloggen, det används endast vid "
 "utloggning från Microsoft Entra ID.)"
 
-#: SettingsPage.php:553
+#: SettingsPage.php:564
+msgid "(Recommended) No prompt if already signed in"
+msgstr "(Rekommenderat) Visa inget val om användaren redan är inloggad"
+
+#: SettingsPage.php:565
+msgid "Prompt to select account (<code>prompt=select_account</code>)"
+msgstr "Be användaren att välja konto (<code>prompt=select_account</code>)"
+
+#: SettingsPage.php:566
+msgid "Prompt for fresh login (not recommended, <code>prompt=login</code>)"
+msgstr "Tvinga ny inloggning (inte rekommenderat, <code>prompt=login</code>)"
+
+#: SettingsPage.php:591
 msgid "Email Address"
 msgstr "E-postadress"
 
-#: SettingsPage.php:556
+#: SettingsPage.php:594
 msgid "Login Name"
 msgstr "Inloggningsnamn"
 
-#: SettingsPage.php:562
+#: SettingsPage.php:600
 msgid ""
 "This specifies the WordPress user field which will be used to match to the "
 "Microsoft Entra ID user's UserPrincipalName."
@@ -222,7 +238,7 @@ msgstr ""
 "Detta anger WordPress-användarfältet som kommer att användas för att matcha "
 "till Microsoft Entra ID-användarens UserPrincipalName."
 
-#: SettingsPage.php:573
+#: SettingsPage.php:611
 msgid ""
 "Match WordPress users based on the alias of their Microsoft Entra ID "
 "UserPrincipalName. For example, Microsoft Entra ID username "
@@ -233,7 +249,7 @@ msgstr ""
 "<code>bob@example.com</code> kommer att matcha WordPress-användare "
 "<code>bob</code>."
 
-#: SettingsPage.php:601
+#: SettingsPage.php:639
 msgid ""
 "This is the default role that users will be assigned to if matching "
 "Microsoft Entra ID group to WordPress roles is enabled, but the signed in "
@@ -244,7 +260,7 @@ msgstr ""
 "inloggade användaren inte är medlem i någon av de konfigurerade Microsoft "
 "Entra ID-grupperna."
 
-#: SettingsPage.php:613
+#: SettingsPage.php:651
 msgid ""
 "Automatically create WordPress users, if needed, for authenticated Microsoft "
 "Entra ID users."
@@ -252,7 +268,7 @@ msgstr ""
 "Skapa automatiskt WordPress-användare, om det behövs, för autentiserade "
 "Microsoft Entra ID användare."
 
-#: SettingsPage.php:624
+#: SettingsPage.php:662
 msgid ""
 "Automatically forward users to the Microsoft Entra ID to sign in, skipping "
 "the WordPress login screen."
@@ -260,7 +276,7 @@ msgstr ""
 "Omdirigera automatiskt användare till Microsoft Entra ID för inloggning, och "
 "hoppa över WordPress-inloggningsskärmen."
 
-#: SettingsPage.php:635
+#: SettingsPage.php:673
 msgid ""
 "Automatically assign WordPress user roles based on Microsoft Entra ID group "
 "membership."
@@ -268,7 +284,7 @@ msgstr ""
 "Tilldela automatiskt WordPress-användarroller baserat på medlemskap i "
 "Microsoft Entra ID grupper."
 
-#: SettingsPage.php:650
+#: SettingsPage.php:688
 msgid ""
 "The OpenID Connect configuration endpoint to use. To support Microsoft "
 "Accounts and external users (users invited in from other Microsoft Entra ID "
@@ -284,7 +300,7 @@ msgstr ""
 "configuration</code>, där <code>{tenant-id}</code> är klientorganisations-ID "
 "eller ett verifierat domännamn för din katalog."
 
-#: SettingsPage.php:664
+#: SettingsPage.php:702
 msgid "Do a full logout of Microsoft Entra ID when logging out of WordPress."
 msgstr ""
 "Gör en fullständig utloggning från Microsoft Entra ID när du loggar ut från "
