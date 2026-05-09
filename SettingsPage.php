@@ -258,6 +258,14 @@ class AADSSO_Settings_Page {
 		);
 
 		add_settings_field(
+			'prompt', // id
+			__( 'Login prompt behavior', 'aad-sso-wordpress' ), // title
+			array( $this, 'prompt_callback' ), // callback
+			'aadsso_settings_page', // page
+			'aadsso_settings_general' // section
+		);
+
+		add_settings_field(
 			'field_to_match_to_upn', // id
 			__( 'Field to match to UPN', 'aad-sso-wordpress' ), // title
 			array( $this, 'field_to_match_to_upn_callback' ), // callback
@@ -360,6 +368,14 @@ class AADSSO_Settings_Page {
 			if ( isset( $input[ $text_field ] ) ) {
 				$sanitary_values[ $text_field ] = sanitize_text_field( $input[ $text_field ] );
 			}
+		}
+
+		// Default prompt is empty (omit parameter).
+		$sanitary_values['prompt'] = '';
+		if ( isset( $input['prompt'] )
+			&& in_array( $input['prompt'], array( 'login', 'select_account' ), true )
+		) {
+			$sanitary_values['prompt'] = $input['prompt'];
 		}
 
 		// Default field_to_match_to_upn is 'email'
@@ -537,6 +553,28 @@ class AADSSO_Settings_Page {
 			  . 'This URL must be registered in Microsoft Entra ID as a valid redirect URL. (This does not affect '
 			  . ' logging out of the blog, it is only used when logging out of Microsoft Entra ID.)', 'aad-sso-wordpress' )
 		);
+	}
+
+	/**
+	 * Renders the `prompt` form control.
+	 */
+	public function prompt_callback() {
+		$selected = isset( $this->settings['prompt'] ) ? $this->settings['prompt'] : '';
+		$options = array(
+			''               => __( '(Recommended) No prompt if already signed in', 'aad-sso-wordpress' ),
+			'select_account' => __( 'Prompt to select account (<code>prompt=select_account</code>)', 'aad-sso-wordpress' ),
+			'login'          => __( 'Prompt for fresh login (not recommended, <code>prompt=login</code>)', 'aad-sso-wordpress' ),
+		);
+		echo '<fieldset>';
+		foreach ( $options as $value => $label ) {
+			printf(
+				'<label><input type="radio" name="aadsso_settings[prompt]" value="%s"%s /> %s</label><br />',
+				esc_attr( $value ),
+				checked( $selected, $value, false ),
+				$label
+			);
+		}
+		echo '</fieldset>';
 	}
 
 	/**
